@@ -18,7 +18,7 @@
 </script>
 
 <Window title="Laser">
-    <div class="p-6 flex flex-col items-center gap-6">
+    <div class="py-6 px-16 flex flex-col items-center gap-6">
         {#if state === 'Updating'}
             <div class="flex gap-4">
                 <img class="h-16" src="assets/warning.png" alt="Laser Warning">
@@ -42,7 +42,9 @@
                     <h2 class="text-lg">Ready</h2>
                 </div>
             </div> 
-            <button class="btn" style="padding: 0 20px;" on:click={() => isRunning = !isRunning}>{#if isRunning}Stop{:else}Start{/if}</button>
+            <button class="btn" style="padding: 0 20px;" on:click={() => isRunning = !isRunning}>
+                {#if isRunning}Stop{:else}Start{/if}
+            </button>
         {/if}
     </div>
 </Window>
