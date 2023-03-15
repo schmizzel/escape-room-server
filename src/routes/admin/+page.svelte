@@ -2,11 +2,11 @@
     function openBox() {
         fetch('http://192.168.1.1:3000/api/open', { method: 'GET' })
             .then(res => res.json())
-            .then(json => console.log('box opened'))
+            .then(json => console.log('box opened', json))
             .catch(err => console.error(err))
     }
 
-    function setState(state) {
+    function setState(state: string) {
         fetch('http://192.168.1.1:3000/api/setState', { 
             method: 'POST', 
             headers: {
