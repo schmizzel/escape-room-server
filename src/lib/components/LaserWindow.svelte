@@ -2,14 +2,24 @@
     import UpdateBar from "./UpdateBar.svelte";
     import Window from "./Window.svelte";
 
-    let state: 'Update' | 'Ready' = 'Ready'
+    let state: 'Updating' | 'Ready' = 'Ready'
     let isUpdating = false
     let isRunning = false
+
+    
+    const socket = new WebSocket('ws://localhost:3000/wss');
+    // Listen for messages
+    socket.addEventListener('message', (event) => {
+        const response = JSON.parse(event.data)
+        if (['Updating', 'Ready'].includes(response.state)) {
+            state = response.state
+        }
+    });
 </script>
 
 <Window title="Laser">
     <div class="p-6 flex flex-col items-center gap-6">
-        {#if state === 'Update'}
+        {#if state === 'Updating'}
             <div class="flex gap-4">
                 <img class="h-16" src="assets/warning.png" alt="Laser Warning">
                 <div>
