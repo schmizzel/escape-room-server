@@ -2,10 +2,11 @@
     import UpdateBar from "./UpdateBar.svelte";
     import Window from "./Window.svelte";
 
-    let state: 'Updating' | 'Ready' = 'Ready'
+    let state: 'Updating' | 'Ready' = 'Updating'
     let isUpdating = false
     let isRunning = false
     const addr = 'ws://192.168.1.1:3000/wss'
+    const host = 'http://192.168.1.1'
     
     const socket = new WebSocket(addr);
     // Listen for messages
@@ -15,6 +16,30 @@
             state = response.state
         }
     });
+
+    function onClick() {
+        if (isRunning) {
+            stop()
+        } else {
+            start()
+        }
+    }
+
+    function start() {
+        isRunning = true
+        fetch(`${host}/api/start`, { method: 'POST' })
+            .then(res => res.json())
+            .then(json => console.log('laser started'))
+            .catch(err => console.error(err))
+    }
+
+    function stop() {
+        isRunning = false
+        fetch(`${host}/api/stop`, { method: 'POST' })
+            .then(res => res.json())
+            .then(json => console.log('laser stopped'))
+            .catch(err => console.error(err)) 
+    }
 </script>
 
 <Window title="Laser">
@@ -42,7 +67,7 @@
                     <h2 class="text-lg">Ready</h2>
                 </div>
             </div> 
-            <button class="btn" style="padding: 0 20px;" on:click={() => isRunning = !isRunning}>
+            <button class="btn" style="padding: 0 20px;" on:click={onClick}>
                 {#if isRunning}Stop{:else}Start{/if}
             </button>
         {/if}
