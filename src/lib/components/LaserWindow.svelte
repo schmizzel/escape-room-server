@@ -5,9 +5,9 @@
     let state: 'Updating' | 'Ready' = 'Ready'
     let isUpdating = false
     let isRunning = false
-
+    const addr = 'ws://192.168.1.1:3000/wss'
     
-    const socket = new WebSocket('ws://192.168.1.1:3000/wss');
+    const socket = new WebSocket(addr);
     // Listen for messages
     socket.addEventListener('message', (event) => {
         const response = JSON.parse(event.data)
