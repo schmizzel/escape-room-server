@@ -7,7 +7,7 @@
     let isRunning = false
 
     
-    const socket = new WebSocket('ws://localhost:3000/wss');
+    const socket = new WebSocket('ws://192.168.1.1:3000/wss');
     // Listen for messages
     socket.addEventListener('message', (event) => {
         const response = JSON.parse(event.data)
