@@ -6,7 +6,7 @@
     let isUpdating = false
     let isRunning = false
     const addr = 'ws://192.168.1.1:3000/wss'
-    const host = 'http://192.168.1.1'
+    const host = 'http://192.168.1.1:3000'
     
     const socket = new WebSocket(addr);
     // Listen for messages
