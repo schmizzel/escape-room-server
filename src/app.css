@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: Windows;
-    src: url('assets/windows.ttf') format('truetype');
+    src: url('http://192.168.1.1/assets/windows.ttf') format('truetype'), url('assets/windows.ttf') format('truetype');
 }
 
 body {
