@@ -9,6 +9,7 @@
 
     function login() {
         if (input === correctWord) {
+            showError = false
             success = true
         } else {
             showError = true
