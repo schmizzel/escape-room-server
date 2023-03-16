@@ -32,7 +32,7 @@
                 <p>Spam</p>
             </div>
             <div class="flex w-full h-full items-center justify-center">
-                <h1>No Mail</h1>
+                <h1>Email Deactivated</h1>
             </div>
         </div>
         <button class="btn mt-8 mb-2" on:click={close} style="padding: 0 20px;">Logout</button>
