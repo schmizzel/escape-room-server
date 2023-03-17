@@ -28,12 +28,12 @@
     <div class="flex flex-col items-center"> 
         <div class="flex w-96 pt-1">
             <div class="w-32 h-32 bg-white windows-box-shadow">
-                <p><b>Inbox (0)</b></p>
+                <p><b>Inbox (9999+)</b></p>
                 <p>Outbox</p>
                 <p>Spam</p>
             </div>
             <div class="flex w-full h-full items-center justify-center">
-                <h1>Email Deactivated</h1>
+                <h1>Error: Too many emails</h1>
             </div>
         </div>
         <button class="btn mt-8 mb-2" on:click={close} style="padding: 0 20px;">Logout</button>
