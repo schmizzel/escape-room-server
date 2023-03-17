@@ -2,7 +2,7 @@
     import Window from "./Window.svelte";
 
     // No peeking ;)
-    const correctWord = "L3tzF2tz22"
+    const correctWord = "L3tzF2tz22?!"
     let input = ''
     let showError = false
     let success = false
