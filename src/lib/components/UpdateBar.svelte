@@ -17,6 +17,6 @@
         <div class="absolute h-6 w-4 bg-windows-blue" hidden={isHidden}></div>
     </div>
     <div class="flex justify-between my-1">
-        <span>Time remaining:</span><span>10 years</span>
+        <span>Time remaining:</span><span>25 years</span>
     </div>
 </div>
